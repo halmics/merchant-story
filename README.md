@@ -24,6 +24,6 @@ syntax error at ../common/towndata.cgi line 2, near &quot;{}&quot;<br>Compilatio
 
 ---
 
-Apache の suEXEC が有効になっている関係で環境変数が読み込めなくり、ハッシュ変数 `$Tname{}` のキー名が空欄になってしまうことが原因です。
+Apache の suEXEC が有効になっている関係で環境変数が読み込めなくり、ハッシュ変数 `$Tname` のキーが空になってしまうことが原因です。
 
 適切な設定を施すか、 suEXEC を無効化することで回避できます。
