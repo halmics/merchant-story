@@ -127,7 +127,7 @@ sub OutHeader
 {
 	print "Cache-Control: no-cache, no-store\n";
 	print "Pragma: no-cache\n";
-	print "Content-type: text/html; charset=Shift_JIS\n\n";
+	print "Content-type: text/html; charset=UTF-8\n\n";
 }
 
 sub OutSkin
