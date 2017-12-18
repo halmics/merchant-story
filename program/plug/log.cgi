@@ -22,7 +22,7 @@ sub ReadLog
 	if($keyword)
 	{
 		use Encode qw(decode_utf8);
-		$keyword=decode_utf8($keyword');
+		$keyword=decode_utf8($keyword);
 		@MESSAGE=grep(/\Q$keyword\E/oi,@MESSAGE);
 	}
 	if($target)
