@@ -36,15 +36,15 @@ sub GetQueryBBS
 
 	my $key;
 	undef %Q;
-	require $JCODE_FILE;
+	use Encode qw(encode_utf8);
 	foreach(split(/&/,$q))
 	{
 		($key, $val) = split(/=/);
 		$val =~ tr/+/ /;
 		$val =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
 
-		# S-JIS変換
-		&jcode'convert(*val, "sjis", "", "z");
+		# UTF-8変換
+		encode_utf8(*val);
 
 		$val =~ s/&/&amp;/g;
 		$val =~ s/</&lt;/g;

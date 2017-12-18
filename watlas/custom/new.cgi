@@ -3,7 +3,7 @@
 
 $image[0]=GetTagImgKao("案内人","guide");
 $image[1]=GetTagImgKao("王様","king",'align="left" ');
-require $JCODE_FILE;
+use Encode qw(decode_utf8);
 DataRead();
 
 if($Q{admin} ne $MASTER_PASSWORD)
@@ -18,8 +18,8 @@ if($Q{admin} ne $MASTER_PASSWORD)
 
 if($Q{sname}.$Q{name}.$Q{pass1}.$Q{pass2})
 {
-	$Q{name}=jcode::sjis($Q{name},$CHAR_SHIFT_JIS&&'sjis');
-	$Q{sname}=jcode::sjis($Q{sname},$CHAR_SHIFT_JIS&&'sjis');
+	$Q{name}=decode_utf8($Q{name});
+	$Q{sname}=decode_utf8($Q{sname});
 
 	if(($Q{sname}.$Q{name}.$Q{pass1}.$Q{pass2}) =~ /([,:;\t\r\n<>&])/
 	|| ($Q{pass1}.$Q{pass2}) =~ /([^A-Za-z0-9_\-])/  #.$Q{name}を削除

@@ -21,14 +21,14 @@ sub ReadLog
 	}
 	if($keyword)
 	{
-		require $JCODE_FILE;
-		$keyword=jcode::sjis($keyword,$CHAR_SHIFT_JIS&&'sjis');
+		use Encode qw(decode_utf8);
+		$keyword=decode_utf8($keyword');
 		@MESSAGE=grep(/\Q$keyword\E/oi,@MESSAGE);
 	}
 	if($target)
 	{
-		require $JCODE_FILE;
-		$target=jcode::sjis($target,$CHAR_SHIFT_JIS&&'sjis');
+		use Encode qw(decode_utf8);
+		$target=decode_utf8($target);
 		@MESSAGE=grep(/\Q$target\E/o,@MESSAGE);
 	}
 	@MESSAGE=("0\t0\t0\t情報はありません\n") if !scalar(@MESSAGE);

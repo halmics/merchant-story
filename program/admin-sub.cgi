@@ -1,6 +1,6 @@
 # 個別ユーザー管理 2005/03/30 由來
 
-require $JCODE_FILE;
+use Encode qw(decode_utf8);
 Lock();
 DataRead();
 CheckUserPass();
@@ -9,7 +9,7 @@ OutError('') if !$MASTER_USER || $USER ne 'soldoutadmin';
 OutError('ユーザが見つかりません') if !defined($name2idx{$Q{user}});
 my $DT=$DT[$name2idx{$Q{user}}];
 
-$Q{comment}="【".jcode::sjis($Q{comment})."】" if $Q{comment} ne '';
+$Q{comment}="【".decode_utf8($Q{comment})."】" if $Q{comment} ne '';
 
 #重複登録自動アクセス制限の個別対応
 if($Q{nocheckip})
@@ -21,7 +21,7 @@ if($Q{nocheckip})
 #アクセス制限制御
 if($Q{blocklogin})
 {
-	$Q{blocklogin}=jcode::sjis($Q{blocklogin});
+	$Q{blocklogin}=decode_utf8($Q{blocklogin});
 	if($Q{blocklogin} eq 'off')
 	{
 		$disp.='アクセス制限を解除しました';

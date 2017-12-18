@@ -20,8 +20,8 @@ OutSkin();
 
 sub comment
 {
-	require $JCODE_FILE;
-	$comment=jcode::sjis($Q{cmt},$CHAR_SHIFT_JIS&&'sjis');
+	use Encode qw(decode_utf8);
+	$comment=decode_utf8($Q{cmt});
 
 	if(($comment) =~ /([,:;\t\r\n<>&])/
 	|| CheckNGName($comment)
@@ -46,8 +46,8 @@ sub icon
 sub shopname
 {
 	OutError('資金が足りません。') if $DT->{money}<50000;
-	require $JCODE_FILE;
-	$Q{rename}=jcode::sjis($Q{rename},$CHAR_SHIFT_JIS&&'sjis');
+	use Encode qw(decode_utf8);
+	$Q{rename}=decode_utf8($Q{rename});
 	if(($Q{rename}) =~ /([,:;\t\r\n<>&])/
 	|| CheckNGName($Q{rename})
 	)
@@ -67,8 +67,8 @@ sub shopname
 sub owname
 {
 	OutError('資金が足りません。') if $DT->{money}<50000;
-	require $JCODE_FILE;
-	$Q{owname}=jcode::sjis($Q{owname},$CHAR_SHIFT_JIS&&'sjis');
+	use Encode qw(decode_utf8);
+	$Q{owname}=decode_utf8($Q{owname});
 	if(($Q{owname}) =~ /([,:;\t\r\n<>&])/
 	|| CheckNGName($Q{owname})
 	)
