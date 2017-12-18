@@ -282,7 +282,7 @@ $temptimenow=$DTlasttime;
 		@event::DT=@DT;
 		@event::ITEM=@ITEM;
 		my %group=();
-		if(defined(%DTevent))
+		if(%DTevent)
 		{
 			foreach my $key (keys(%DTevent))
 			{
