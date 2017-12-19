@@ -38,7 +38,7 @@ sub SetCookie
 			$min,
 			$sec
 		);
-	print "Set-Cookie: USERNAME=$nm; expires=$expire;\n";
-	print "Set-Cookie: PASSWORD=$pw; expires=$expire;\n";
+	print "Set-Cookie: USERNAME=$nm; expires=$expire; HttpOnly\n";
+	print "Set-Cookie: PASSWORD=$pw; expires=$expire; HttpOnly\n";
 	#print "Set-Cookie: shop=;\n";
 }

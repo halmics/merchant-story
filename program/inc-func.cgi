@@ -215,7 +215,7 @@ sub SetCookieSession
 {
 	my($name,$sess)=@_;
 	$name="-check-cookie-",$sess=time() if $name eq "";
-	print "Set-Cookie: SESSION=$name!$sess;\n";
+	print "Set-Cookie: SESSION=$name!$sess; HttpOnly\n";
 }
 
 sub DataRead
