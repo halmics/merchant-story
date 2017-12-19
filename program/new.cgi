@@ -37,11 +37,11 @@ if($Q{sname}.$Q{name}.$Q{pass1}.$Q{pass2})
 	{
 		OutError('確認パスワードが違っています。');
 	}
-	if(length($Q{sname})<4)
+	if(length($Q{sname})<2)
 	{
 		OutError('店名の文字数が少ないです。');
 	}
-	if(length($Q{name})>12 || length($Q{sname})>20
+	if(length($Q{name})>6 || length($Q{sname})>10
 	|| length($Q{pass1})>12 || length($Q{pass2})>8)
 	{
 		OutError('名前(全角6文字)・店名(全角10文字)・パスワード(8文字)の文字数が多いです。');
