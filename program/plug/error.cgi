@@ -28,7 +28,7 @@ sub OutError
 	(
 		"not defined function"=>
 			'定義されていない関数を呼び出しました。管理者に以下の情報を連絡してください。<hr>'.
-			"not defined function '$_[1]'",
+			"not defined function 'EscapeHTML($_[1])'",
 		"busy"=>
 			'アクセスが<SPAN>混雑</SPAN>しております。<br>'.
 			'お手数ですが<SPAN>必ず５秒以上待ってから</SPAN>戻ってもう一度アクセスしてください。<br>'.
@@ -41,9 +41,9 @@ sub OutError
 			'この店舗は<SPAN>お休み中</SPAN>です。'.
 			'プレイを再開するときは<a href="mailto:'.$ADMIN_EMAIL.'">管理人までご連絡</a>ください。',
 		"no user"=>
-			'存在しないIDです。IDをご確認ください。→'.$_[1],
+			'存在しないIDです。IDをご確認ください。→'.EscapeHTML($_[1]),
 		"incorrect"=>
-			'パスワードが間違っています。ご確認ください→'.$_[1],
+			'パスワードが間違っています。ご確認ください→'.EscapeHTML($_[1]),
 		"error rename"=>
 			'データ更新に失敗しました',
 		"timeout"=>
@@ -90,7 +90,7 @@ __function__
 sub OutErrorBlockLogin
 {
 	OutError('
-		ご指定のIDは<SPAN>'.$_[0].'</SPAN>のためアクセス制限されています。<br>
+		ご指定のIDは<SPAN>'.EscapeHTML($_[0]).'</SPAN>のためアクセス制限されています。<br>
 		プレイ中の「街名」「ユーザ名」「店舗名」を添えて<a href="mailto:'.$ADMIN_EMAIL.'">管理人までご連絡</a>ください。
 	');
 }
