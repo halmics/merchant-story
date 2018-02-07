@@ -4,6 +4,7 @@ MAINTAINER tsukune
 RUN apt-get update && apt-get install -y \
       curl \
       fcgiwrap \
+      libencode-perl \
       rsync \
       spawn-fcgi \
       unzip \
