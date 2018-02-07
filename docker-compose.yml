@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    container_name: merchant-story
+    build: .
+    volumes:
+      - ./merchant-story:/var/www/merchant-story
+    ports:
+      - "8080:80"

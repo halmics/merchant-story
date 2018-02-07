@@ -24,6 +24,6 @@ rsync -a -v --include="*.gif" \
             --include="*/" \
             --exclude="*" \
             --exclude=".*" \
-            "${PROGRAM_DIR}/watlas/" "${SCRIPT_DIR}/watlas"
+            "${PROGRAM_DIR}/watlas/" "${SCRIPT_DIR}/merchant-story/watlas"
 
 echo "Merge complete!"

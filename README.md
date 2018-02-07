@@ -13,6 +13,14 @@
 
 付属のシェルスクリプト `merge.sh` を使うと、マージを自動化することができます。
 
+## Development
+
+```
+$ git clone https://github.com/halmics/merchant-story.git
+$ cd merchant-story
+$ docker-compose up -d --build
+```
+
 ## FAQ
 
 ### データ初期化をすると以下のようなエラーが発生してしまう
