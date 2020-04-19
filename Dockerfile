@@ -1,4 +1,4 @@
-FROM nginx:1.12
+FROM nginx:1.17
 MAINTAINER tsukune
 
 RUN apt-get update && apt-get install -y \
